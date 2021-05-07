@@ -1,0 +1,29 @@
+#!/bin/bash
+clear
+echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "INSTALADOR SLOWDNS SERVER" ; tput sgr0
+echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
+echo ""
+echo -e "By @Laael"
+echo ""
+echo -e "BAIXANDO DEPENDENCIAS..."
+fun_att () {
+wget 
+wget 
+}
+fun_att
+PS3='Selecione o método de conexão: '
+options=("SlowDNS SSH" "SlowDNS SSL")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "SlowDNS SSH")
+            sudo apt update
+            break
+            ;;
+        "SlowDNS SSL")
+            echo "you chose choice 2"
+            ;;
+        *) echo "Opção inválida $REPLY";;
+    esac
+done
