@@ -47,8 +47,8 @@ cd /root
 touch infons
 echo $nameserver >> infons
 sleep 1
-wget http://downloads.onehostbr.xyz/files/dns-server/startdns 
-wget http://downloads.onehostbr.xyz/files/dns-server/restartdns 
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/startdns 
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/restartdns 
 chmod +x startdns
 chmod +x restartdns
 sed -i "s;1234;$nameserver;g" /root/startdns > /dev/null 2>&1
@@ -78,13 +78,13 @@ clear
 echo ""
 echo -e "\033[1;31m FINALIZADO!\033[1;33m!!!"
 echo ""
-echo "SUA KEY: " && cat /root/server.pub 
 echo "SEU NS: " && cat /root/infons
+echo "SUA KEY: " && cat /root/server.pub 
 echo ""
 echo "SUA KEY está salva no arquivo /root/server.pub" 
 echo ""
 echo "PARA REINICIAR O SLOWDNS,BASTA RODAR O COMANDO restartdns" 
 echo ""
 echo "SALVE OS ARQUIVOS server.pub e server.key em /root/ num local seguro" 
-echo "Caso troque de VPS,apenas coloque os arquivos server.pub e server.key em /root/ e rode esse script novamente" 
+echo "Caso troque de VPS ou precise formatar,apenas coloque os arquivos server.pub e server.key em /root/ e rode esse script novamente" 
 echo "Assim não precisaremos trocar de keys ao mudar de servidor" 
