@@ -18,11 +18,11 @@ select opt in "${options[@]}"
 do
     case $opt in
         "SlowDNS SSH")
-            apt update; apt upgrade -y; rm -rf dns-server; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/slowdns-install; chmod +x slowdns-install; ./slowdns-install
+            rm -rf dns-server; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/slowdns-install; chmod +x slowdns-install; ./slowdns-install
             break
             ;;
         "SlowDNS SSL")
-            apt update; apt upgrade -y; rm -rf dns-server; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/slowdns-install; chmod +x slowdns-install; ./slowdns-install
+            rm -rf dns-server; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/slowdns-install; chmod +x slowdns-install; ./slowdns-install
             break
             ;;
         *) echo "Opção inválida $REPLY";;
