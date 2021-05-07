@@ -8,8 +8,8 @@ echo -e "By @Laael"
 echo ""
 echo -e "BAIXANDO DEPENDENCIAS..."
 fun_att () {
-wget 
-wget 
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.key
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.pub
 }
 fun_att
 PS3='Selecione o método de conexão: '
