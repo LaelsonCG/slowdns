@@ -118,4 +118,5 @@ echo "PARA REINICIAR O SLOWDNS, BASTA RODAR O COMANDO restartdns"
 echo ""
 echo -e "Salve os arquivos server.pub e server.key (estão em /root/) num local seguro" 
 echo "Caso troque de VPS ou precise formatar, apenas coloque os arquivos server.pub e server.key em /root/ e rode esse script novamente" 
-echo -e "Assim não precisaremos trocar de keys ao mudar de servidor" 
+echo -e "Assim não precisaremos trocar de keys ao mudar de servidor"
+rm -rf dnstt-install slowdns-install infons
