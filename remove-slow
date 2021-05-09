@@ -1,0 +1,10 @@
+cd /root
+echo -e "Parando serviço de DNS"
+screen -ls | grep slowdns | cut -d. -f1 | awk '{print $1}' | xargs kill
+sleep 1.5
+echo ""
+echo -e "Removendo SlowDNS"
+sudo rm -rf dns-server restartdns server.key server.pub startdns /bin/startdns /bin/slowdns /etc/rc.local
+sleep 1.5
+echo ""
+echo -e "SlowDNS Removido Com Sucesso!"
