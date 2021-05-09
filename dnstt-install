@@ -42,6 +42,7 @@ echo ""
 echo -e "BAIXANDO DEPENDENCIAS..." | pv -qL 10
 echo ""
 fun_att () {
+apt install ncurses-utils -y
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.key
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.pub
 }
