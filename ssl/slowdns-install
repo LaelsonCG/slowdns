@@ -99,9 +99,9 @@ clear
 echo ""
 echo -e "\033[1;31m INSTALAÇÃO CONCLUÍDA!\033[1;33m" | pv -qL 10
 echo ""
-echo "SEU NS: " && cat /root/infons
+echo -ne "SEU NS: " && cat /root/infons
 echo ""
-echo "SUA KEY: " && cat /root/server.pub 
+echo -ne "SUA KEY: " && cat /root/server.pub 
 echo ""
 echo -e "SUA KEY está salva no arquivo /root/server.pub" 
 echo ""
