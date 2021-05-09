@@ -92,15 +92,6 @@ finish_ist () {
 cd /root
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
-FILE=/root/server.key
-FILE2=/root/server.pub
-if [[ -f FILE ]] && [[ -f FILE2 ]]
-then
-   echo -e "RESTAURANDO KEY...."
-else 
-  echo -e "GERANDO KEY...."
-    ./dns-server -gen-key -privkey-file server.key -pubkey-file server.pub
-fi
 ./startdns
 }
 fun_bar 'finish_ist'
