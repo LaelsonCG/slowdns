@@ -8,3 +8,4 @@ sudo rm -rf dns-server restartdns server.key server.pub startdns /bin/startdns /
 sleep 1.5
 echo ""
 echo -e "SlowDNS Removido Com Sucesso!"
+rm /root/remove-slow
