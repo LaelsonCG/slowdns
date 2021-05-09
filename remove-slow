@@ -1,3 +1,4 @@
+#!/bin/bash
 cd /root
 echo -e "Parando serviço de DNS"
 screen -ls | grep slowdns | cut -d. -f1 | awk '{print $1}' | xargs kill
