@@ -42,5 +42,9 @@ fun_bar 'fun_rm'
 echo ""
 fun_revdns () {
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
+systemctl enable systemd-resolved.service && systemctl start systemd-resolved.service &&
+sleep 1.5
+}
+fun_bar 'fun_revdns'
 echo -e "SlowDNS Removido Com Sucesso!"
 rm /root/remove-slow
