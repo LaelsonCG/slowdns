@@ -112,4 +112,4 @@ echo -e "Por segurança, salve os arquivos server.pub e server.key (estão em /r
 echo -e "Não será necessário copiar esse arquivo para /root/ nas instalações futuras, mas caso tenha salvo" 
 echo -e "Será uma forma de garantir que não terá problemas no futuro!!"
 read -p "Pressione [Enter] para continuar
-rm -rf dnstt-install slowdns-install infons
+rm -rf dnstt-install slowdns-install
