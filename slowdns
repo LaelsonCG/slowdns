@@ -31,7 +31,7 @@ do
             slowdns
             ;;
          "Instalar SlowDNS DROP")
-         rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/drop/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
+            rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/drop/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
             sleep 10
             clear
             slowdns
@@ -41,6 +41,7 @@ do
             sleep 10
             clear
             slowdns
+            ;;
         "Reiniciar SlowDNS")
             restartdns
             break
@@ -55,7 +56,8 @@ do
             ;;
         "Remover SlowDNS")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
-            break
+            clear
+            sleep 2
             ;;
         "Remover SlowDNS e Menu")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow; rm /bin/slowdns
