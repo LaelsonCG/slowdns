@@ -46,5 +46,6 @@ systemctl enable systemd-resolved.service && systemctl start systemd-resolved.se
 sleep 1.5
 }
 fun_bar 'fun_revdns'
+echo ""
 echo -e "SlowDNS Removido Com Sucesso!"
 rm /root/remove-slow
