@@ -1,0 +1,4 @@
+#!/bin/bash
+nameserver='1234'
+cd /root
+screen -dmS slowdns ./dns-server -udp :5300 -privkey-file server.key $nameserver 127.0.0.1:8080
