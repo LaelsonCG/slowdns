@@ -60,11 +60,10 @@ sudo systemctl disable systemd-resolved.service && sudo systemctl stop systemd-r
 sleep 2
 }
 fun_bar 'fun_dnscf'
+sleep 1
 fun_finish () {
-cd /bin/
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns; chmod +x slowdns
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/desabledns; chmod +x desabledns
-cd
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns && chmod +x slowdns && mv slowdns /bin/
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/desabledns && chmod +x desabledns && mv desabledns /bin/
 sleep 2
 }
 fun-bar 'fun_finish'
