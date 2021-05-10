@@ -103,13 +103,11 @@ echo -ne "SEU NS: " && cat /root/infons
 echo ""
 echo -ne "SUA KEY: " && cat /root/server.pub 
 echo ""
-read -p "Pressione [Enter] para continuar
 echo -e "SUA KEY está salva no arquivo /root/server.pub" 
 echo ""
 echo "PARA REINICIAR O SLOWDNS, BASTA RODAR O COMANDO restartdns" 
 echo ""
-echo -e "Por segurança, salve os arquivos server.pub e server.key (estão em /root/) em um lugar seguro" 
+echo -e "Por segurança, salve os arquivos server.pub e server.key (que estão em /root) em um lugar seguro" 
 echo -e "Não será necessário copiar esse arquivo para /root/ nas instalações futuras, mas caso tenha salvo" 
 echo -e "Será uma forma de garantir que não terá problemas no futuro!!"
-read -p "Pressione [Enter] para continuar
 rm -rf dnstt-install slowdns-install
