@@ -74,3 +74,4 @@ tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "INSTALADOR SLO
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
 echo -e "INSTALAÇÃO CONCLUIDA! Para abrir o menu, use o comando: slowdns"
+rm dnstt-install
