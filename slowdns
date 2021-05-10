@@ -36,9 +36,7 @@ do
             slowdns
             ;;
         "Atualizar SlowDNS")
-            apt update; apt upgrade -y; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/updatedns; chmod +x updatedns; ./updatedns
-            clear
-            slowdns
+            apt update; apt upgrade -y; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/update; chmod +x update; ./update; rm update
             ;;
         "Remover SlowDNS")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
