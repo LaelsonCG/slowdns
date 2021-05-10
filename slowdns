@@ -19,35 +19,29 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Instalar SlowDNS SSH")
-            rm -rf dns-server; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/slowdns-install; chmod +x slowdns-install; ./slowdns-install
-            clear
-            slowdns
+            rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
             ;;
         "Instalar SlowDNS SSL")
-            rm -rf dns-server; slowdns-install wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/slowdns-install; chmod +x slowdns-install; ./slowdns-install
-            rm -rf slowdns-install
+            rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
             ;;
         "Reiniciar SlowDNS")
             restartdns
             ;;
         "Parar SlowDNS")
             desabledns
-            clear
-            slowdns
             ;;
         "Atualizar SlowDNS")
-            apt update; apt upgrade -y; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/update; chmod +x update; ./update; rm update
+            rm remove; apt update; apt upgrade -y; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/update; chmod +x update; ./update; rm update
             ;;
         "Remover SlowDNS")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
-            clear
-            slowdns
             ;;
         "Remover SlowDNS e Menu")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow; rm /bin/slowdns
             break
             ;;
         "Sair")
+            break
             break
             ;;
         *) echo -e "Opção inválida! $REPLY"
