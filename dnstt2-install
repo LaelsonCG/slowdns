@@ -61,12 +61,17 @@ sleep 2
 }
 fun_bar 'fun_dnscf'
 sleep 1
-fun_finish () {
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns && chmod +x slowdns && mv slowdns /bin/
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/desabledns && chmod +x desabledns && mv desabledns /bin/
+fun_finishing () {
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns
+chmod +x slowdns
+cp slowdns /bin/
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/desabledns
+chmod +x desabledns
+cp desabledns /bin/
+rm slowdns desabledns
 sleep 2
 }
-fun-bar 'fun_finish'
+fun-bar 'fun_finishing'
 clear
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "INSTALADOR SLOWDNS MANAGER" ; tput sgr0
