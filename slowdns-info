@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -e "\033[1;36m ESTAS SÃO SUAS INFORMAÇÕES!\033[0m"
+echo ""
+echo -ne "SEU NS (Nameserver): " && cat /root/infons
+echo ""
+echo -ne "SUA KEY: " && cat /root/server.pub
