@@ -110,4 +110,4 @@ echo ""
 echo -e "Por segurança, salve os arquivos server.pub e server.key (que estão em /root) em um lugar seguro" 
 echo -e "Não será necessário copiar esse arquivo para /root/ nas instalações futuras, mas caso tenha salvo" 
 echo -e "Será uma forma de garantir que não terá problemas no futuro!!"
-rm -rf dnstt-install
+rm -rf dnstt-install startdns restartdns
