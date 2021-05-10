@@ -14,27 +14,48 @@ echo -e "\033[1;31m════════════════════�
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "MENU SLOWDNS MANAGER V2.0" ; tput sgr0
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
-options=("Instalar SlowDNS SSH" "Instalar SlowDNS SSL" "Reiniciar SlowDNS" "Parar SlowDNS" "Atualizar SlowDNS" "Remover SlowDNS" "Remover SlowDNS e Menu" "Sair")
+options=("Instalar SlowDNS SSH" "Instalar SlowDNS SSL" "Instalar SlowDNS DROP" "Ver Credenciais" "Reiniciar SlowDNS" "Parar SlowDNS" "Atualizar SlowDNS" "Remover SlowDNS" "Remover SlowDNS e Menu" "Sair")
 select opt in "${options[@]}"
 do
     case $opt in
         "Instalar SlowDNS SSH")
             rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
+            sleep 10
+            clear
+            slowdns
             ;;
         "Instalar SlowDNS SSL")
             rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
+            sleep 10
+            clear
+            slowdns
             ;;
+         "Instalar SlowDNS DROP")
+         rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/drop/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
+            sleep 10
+            clear
+            slowdns
+            ;;
+        "Ver Credenciais")
+            slowdns-info
+            sleep 10
+            clear
+            slowdns
         "Reiniciar SlowDNS")
             restartdns
+            break
             ;;
         "Parar SlowDNS")
             desabledns
+            break
             ;;
         "Atualizar SlowDNS")
             rm remove; apt update; apt upgrade -y; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/update; chmod +x update; ./update; rm update
+            break
             ;;
         "Remover SlowDNS")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
+            break
             ;;
         "Remover SlowDNS e Menu")
             wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow; rm /bin/slowdns
