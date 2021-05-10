@@ -45,6 +45,9 @@ fun_att () {
 apt install ncurses-utils -y
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.key
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.pub
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-info
+chmod +x slowdns-info
+mv slowdns-info /bin/
 }
 fun_bar 'fun_att'
 echo -e "CONFIGURANDO FIREWALL..." | pv -qL 10
