@@ -1,5 +1,8 @@
 #!/bin/bash
 clear
+echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "MENU SLOWDNS MANAGER V2.1" ; tput sgr0
+echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo -e "\033[0;36m#===================================================#\033[m"
 echo -e "\033[0;36m# .|'''.|'||                '||''|. '|.   '|'.|'''.|#\033[m"
 echo -e "\033[0;36m# ||..  ' ||  ... ... ... ...||   || |'|   | ||..  '#\033[m"
@@ -10,9 +13,6 @@ echo -e "\033[0;36m#---------------------------------------------------#\033[m"
 echo -e "\033[0;36m#\033[m \033[0;31mDESENVOLVIDO POR @LAAEL | CANAL @OFICIAL_SPEEDNET\033[m \033[0;36m#\033[m"
 echo -e "\033[0;36m#===================================================#\033[m"
 PS3='O que deseja fazer?: ' 
-echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "MENU SLOWDNS MANAGER V2.1" ; tput sgr0
-echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
 options=("Instalar SlowDNS SSH" "Instalar SlowDNS SSL" "Instalar SlowDNS DROP" "Ver Credenciais" "Reiniciar SlowDNS" "Parar SlowDNS" "Atualizar SlowDNS" "Remover SlowDNS" "Remover Script" "Sair")
 select opt in "${options[@]}"
