@@ -97,7 +97,7 @@ iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
 fun_bar 'finish_ist'
 clear
 echo ""
-echo -e "\033[1;31m INSTALAÇÃO CONCLUÍDA!\033[1;33m" | pv -qL 10
+echo -e "\033[1;31m INSTALAÇÃO CONCLUÍDA!\033[0m" | pv -qL 10
 echo ""
 echo -ne "SEU NS: " && cat /root/infons
 echo ""
