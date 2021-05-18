@@ -48,57 +48,48 @@ echo -e "\033[0;36m#===================================================#\033[m"
 Opcao1 () {
     clear
     bash /etc/slowdns/slowdns-ssh
-    slowdns
 }
 
 Opcao2 () {
     clear
     bash /etc/slowdns/slowdns-ssl
-    slowdns
 }
 
 Opcao3 () {
     clear
     bash /etc/slowdns/slowdns-drop
-    slowdns
 }
 
 Opcao4 () {
     clear
     bash /etc/slowdns/slowdns-socks
-    slowdns
 }
 
 
 Opcao5 () {
     clear
     bash /etc/slowdns/slowdns-info
-    slowdns
 }
 
 Opcao6 () {
     clear
     bash /etc/slowdns/startdns
-    slowdns
 }
 
 Opcao7 () {
     clear
     bash /etc/slowdns/restartdns
-    slowdns
 }
 
 Opcao8 () {
     clear
     bash /etc/slowdns/stopdns
-    slowdns
 }
 
 Opcao9 () {
      clear
     bash /etc/slowdns/stopdns
     bash /etc/slowdns/remove-slow
-    slowdns
 }
 
 Opcao10 () {
@@ -109,7 +100,6 @@ Opcao10 () {
     echo ""
     head -p "Pressione [ENTER] para continuar ou CTRL + C para sair"
     wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/update; chmod +x update; ./update
-    slowdns
 }
 
 Opcao11 () {
