@@ -41,7 +41,7 @@ echo -e "\033[0;36m#===================================================#\033[m"
     10) Opcao10 ;;
     11) Opcao11 ;;
     0) Sair ;;
-    *) "Opção inválida" ; echo ; slowdns;;
+    *) "Opção inválida" ; echo ; slowdns ;;
     esac
     }
 
