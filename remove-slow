@@ -35,7 +35,7 @@ fun_bar 'fun_stop'
 echo ""
 echo -e "Removendo SlowDNS"
 fun_rm () {
-rm -rf dns-server dnstt-install slowdns-install server.key server.pub infons startdns /bin/startdns restartdns /bin/restartdns /bin/desabledns /bin/slowdns-server update /etc/rc.local
+rm /etc/rc.local; mv /etc/rc.local.bkp /etc/rc.local
 sleep 1.5
 }
 fun_bar 'fun_rm'
@@ -48,4 +48,4 @@ sleep 1.5
 fun_bar 'fun_revdns'
 echo ""
 echo -e "SlowDNS Removido Com Sucesso!"
-rm /root/remove-slow
+rm -rf /etc/slowdns
