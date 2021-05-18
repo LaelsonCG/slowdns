@@ -33,7 +33,7 @@ sleep 1
 fun_start () {
 nameserver='1234'
 cd /etc/slowdns
-screen -dmS slowdns ./dns-server -udp :5300 -privkey-file server.key $nameserver 127.0.0.1:22
+screen -dmS slowdns /etc/slowdns/dns-server -udp :5300 -privkey-file /etc/slowdns/server.key $nameserver 127.0.0.1:22
 sleep 2
 }
 fun_bar 'start'
