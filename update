@@ -9,7 +9,7 @@ ${comando[1]} -y > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
-echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m[" | pv -qL 15
+echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
 while true; do
    for((i=0; i<18; i++)); do
    echo -ne "\033[1;31m#"
@@ -31,8 +31,7 @@ echo ""
 fun_update () {
 rm -rf remove-slow; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
 rm -rf /bin/slowdns && rm; /root/remove-slow
-rm -rf dnstt-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/dnstt-install; chmod +x dnstt-install; ./dnstt-install
+rm -rf dnstt-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install; chmod +x install; .install
 }
 fun_bar 'fun_update'
 echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]/033[0m"
-sleep 2
