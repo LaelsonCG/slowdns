@@ -35,3 +35,4 @@ rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/in
 }
 fun_bar 'fun_update'
 echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]/033[0m"
+rm update
