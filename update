@@ -30,8 +30,8 @@ echo -e "   \033[0;36mATUALIZANDO SLOWDNS.../033[0m"
 echo ""
 fun_update () {
 rm -rf remove-slow; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
-rm -rf /bin/slowdns && rm; /root/remove-slow
-rm -rf dnstt-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install; chmod +x install; .install
+rm -rf /bin/slowdns && rm /root/remove-slow
+rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install; chmod +x install; .install
 }
 fun_bar 'fun_update'
 echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]/033[0m"
