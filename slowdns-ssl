@@ -53,14 +53,7 @@ service iptables reload
 service iptables restart
 }
 fun_bar 'install_pkgs'
-echo -e "BAIXANDO BINARIO DNSTT..."
-download_dnstt () {
-rm -rf /etc/slowdns
-mkdir /etc/slowdns
-cd /etc/slowdns/ && wget https://github.com/LaelsonCG/slowdns/raw/main/dns-server
-chmod +x dns-server
-}
-fun_bar 'download_dnstt'
+echo ""
 echo -e "CONFIGURANDO IPTABLES..."
 ipt_set () {
 cd /etc
@@ -82,8 +75,7 @@ echo $nameserver > infons
 set_ns () {
 sleep 1
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/startdns 
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/restartdns 
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-info
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/restartdns
 chmod +x startdns
 chmod +x restartdns
 sed -i "s;1234;$nameserver;g" /etc/slowdns/startdns > /dev/null 2>&1
@@ -128,6 +120,8 @@ echo -ne "Restaurando key existente..." && sleep 2 && echo "OK!"
 echo ""
 echo -e "FINALIZANDO..."
 finish_ist () {
+cd
+cp server.key /etc/slowdns/ && cp server.pub /etc/slowdns/
 cd /etc/slowdns
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
@@ -157,9 +151,11 @@ cd /etc/slowdns/
 ./dns-server -gen-key -privkey-file /root/server.key -pubkey-file /root/server.pub
 echo -e "FINALIZANDO..."
 finish_ist () {
+cd
+cp server.key /etc/slowdns/ && cp server.pub /etc/slowdns/
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
-./startdns
+cd /etc/slowdns && ./startdns
 cd
 }
 fun_bar 'finish_ist'
@@ -184,6 +180,7 @@ cd
 rm server.key server.pub
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.key
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/server.pub
+cp server.key /etc/slowdns/ && cp server.pub /etc/slowdns/
 sleep 1
 echo -e "Download Concluído"
 sleep 1
@@ -290,12 +287,12 @@ echo -e "\033[1;33m SUA KEY está salva no arquivo /root/server.pub\033[0m"
 echo -e "\033[1;33mGuarde-a em um local seguro, pode precisar no futuro!\033[0m"
 echo ""
 read -p "Pressione [Enter] para voltar ao menu ou CTRL+C para sair"
-slowdns
 }
 opc_keyx () {
 echo "Abortando instalação"
 sleep 2
-slowdns
+exit
 }
 key_gen
 fi
+cp
