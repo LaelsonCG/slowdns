@@ -43,10 +43,13 @@ fun_att () {
 apt install ncurses-utils -y
 mkdir /etc/slowdns
 cd /etc/slowdns
-wget https://raw.githubusercontent.com/LaelsonCG/main/slowdns/
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/
+wget https://raw.githubusercontent.com/LaelsonCG/main/slowdns/dns-server
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-info
 chmod +x slowdns-info
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns
+chmod +x slowdns
+cp slowdns /bin/
 }
 fun_bar 'fun_att'
 echo -e "CONFIGURANDO FIREWALL..."
@@ -59,10 +62,8 @@ echo -e "DEFININDO DNS DO CLOUDFLARE..."
 echo ""
 fun_dnscf () {
 sudo systemctl disable systemd-resolved.service && sudo systemctl stop systemd-resolved.service && sudo mv /etc/resolv.conf /etc/resolv.conf.bkp && echo "nameserver 1.1.1.1" > /etc/resolv.conf
+sudo systemctl enable systemd-resolved.service && sudo systemctl start systemd-resolved.service
 sleep 2
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns
-chmod +x slowdns
-cp slowdns /bin/
 }
 fun_bar 'fun_dnscf'
 clear
