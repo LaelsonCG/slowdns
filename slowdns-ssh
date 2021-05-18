@@ -53,18 +53,10 @@ service iptables reload
 service iptables restart
 }
 fun_bar 'install_pkgs'
-echo -e "BAIXANDO BINARIO DNSTT..."
-download_dnstt () {
-rm -rf /etc/slowdns
-mkdir /etc/slowdns
-cd /etc/slowdns/ && wget https://github.com/LaelsonCG/slowdns/raw/main/dns-server
-chmod +x dns-server
-}
-fun_bar 'download_dnstt'
 echo -e "CONFIGURANDO IPTABLES..."
 ipt_set () {
 cd /etc
-rm -rf rc.local
+mv rc.local rc.local.bkp
 wget https://github.com/LaelsonCG/slowdns/raw/main/rc.local
 chmod +x /etc/rc.local
 systemctl enable rc-local
@@ -82,8 +74,7 @@ echo $nameserver > infons
 set_ns () {
 sleep 1
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/startdns 
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/restartdns 
-wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-info
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/restartdns
 chmod +x startdns
 chmod +x restartdns
 sed -i "s;1234;$nameserver;g" /etc/slowdns/startdns > /dev/null 2>&1
