@@ -37,7 +37,7 @@ echo -e ""
 echo -e "         \033[1;33mInstalador feito por @Laael ❤️ \033[1;37m"
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo ""
-echo -e "BAIXANDO DEPENDENCIAS..." | pv -qL 10
+echo -e "BAIXANDO DEPENDENCIAS..."
 echo ""
 fun_att () {
 apt install ncurses-utils -y
