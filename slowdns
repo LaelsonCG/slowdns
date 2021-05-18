@@ -17,13 +17,14 @@ echo -e "\033[0;36m#===================================================#\033[m"
     echo -e "\033[0;36m[01]\033[m | Instalar SlowDNS SSH"
     echo -e "\033[0;36m[02]\033[m | Instalar SlowDNS SSL"
     echo -e "\033[0;36m[03]\033[m | Instalar SlowDNS DROP"
-    echo -e "\033[0;36m[04]\033[m | Ver informações"
-    echo -e "\033[0;36m[05]\033[m | Iniciar SlowDNS"
-    echo -e "\033[0;36m[06]\033[m | Reiniciar SlowDNS"
-    echo -e "\033[0;36m[07]\033[m | Parar SlowDNS"
-    echo -e "\033[0;36m[08]\033[m | Remover SlowDNS"
-    echo -e "\033[0;36m[09]\033[m | Atualizar/Reinstalar"
-    echo -e "\033[0;36m[10]\033[m | Remover Script"
+    echo -e "\033[0;36m[04]\033[m | Instalar SlowDNS SOCKS"
+    echo -e "\033[0;36m[05]\033[m | Ver informações"
+    echo -e "\033[0;36m[06]\033[m | Iniciar SlowDNS"
+    echo -e "\033[0;36m[07]\033[m | Reiniciar SlowDNS"
+    echo -e "\033[0;36m[08]\033[m | Parar SlowDNS"
+    echo -e "\033[0;36m[09]\033[m | Remover SlowDNS"
+    echo -e "\033[0;36m[10]\033[m | Atualizar/Reinstalar"
+    echo -e "\033[0;36m[11]\033[m | Remover Script"
     echo -e "\033[0;36m[00]\033[m | SAIR"
     echo ""
     echo -ne "\033[0;36mO que deseja fazer?:\0033[m " && read opcao
@@ -38,6 +39,7 @@ echo -e "\033[0;36m#===================================================#\033[m"
     8) Opcao8 ;;
     9) Opcao9 ;;
     10) Opcao10 ;;
+    11) Opcao11 ;;
     0) Sair ;;
     *) "Opção inválida" ; echo ; slowdns;;
     esac
@@ -63,36 +65,43 @@ Opcao3 () {
 
 Opcao4 () {
     clear
-    bash /etc/slowdns/slowdns-info
+    bash /etc/slowdns/slowdns-socks
     slowdns
 }
 
+
 Opcao5 () {
     clear
-    bash /etc/slowdns/startdns
+    bash /etc/slowdns/slowdns-info
     slowdns
 }
 
 Opcao6 () {
     clear
-    bash /etc/slowdns/restartdns
+    bash /etc/slowdns/startdns
     slowdns
 }
 
 Opcao7 () {
     clear
-    bash /etc/slowdns/stopdns
+    bash /etc/slowdns/restartdns
     slowdns
 }
 
 Opcao8 () {
+    clear
+    bash /etc/slowdns/stopdns
+    slowdns
+}
+
+Opcao9 () {
      clear
     bash /etc/slowdns/stopdns
     bash /etc/slowdns/remove-slow
     slowdns
 }
 
-Opcao9 () {
+Opcao10 () {
     clear
     echo -e "Ao fim do processo será necessário configurar"
     echo -e "novamente o serviço de SlowDNS, escolha a opção"
@@ -103,7 +112,7 @@ Opcao9 () {
     slowdns
 }
 
-Opcao10 () {
+Opcao11 () {
      clear
     bash /etc/slowdns/remove-slow
     echo -e "\033[0;31mSlowDNS Manager Desinstalado!\033[0m"
