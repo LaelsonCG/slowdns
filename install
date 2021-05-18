@@ -51,6 +51,7 @@ wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-ssh; chmod
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-ssl; chmod +x slowdns-ssl
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns-socks; chmod +x slowdns-socks
 wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/slowdns; chmod +x slowdns; cp slowdns /bin/
+wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/stopdns; chmod +x stopdns
 }
 fun_bar 'fun_att'
 echo -e "CONFIGURANDO FIREWALL..."
