@@ -1,7 +1,8 @@
 #!/bin/bash
 clear
+slowdns () {
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "MENU SLOWDNS MANAGER V2.1" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%40s%s%-12s\n' "MENU SLOWDNS MANAGER V3.0" ; tput sgr0
 echo -e "\033[1;31m════════════════════════════════════════════════════\033[0m"
 echo -e "\033[0;36m#===================================================#\033[m"
 echo -e "\033[0;36m# .|'''.|'||                '||''|. '|.   '|'.|'''.|#\033[m"
@@ -12,62 +13,102 @@ echo -e "\033[0;36m#|'....|'.||.'|..|'  |   |  .||...|'.|.   '||'....|'#\033[m"
 echo -e "\033[0;36m#---------------------------------------------------#\033[m"
 echo -e "\033[0;36m#\033[m \033[0;31mDESENVOLVIDO POR @LAAEL | CANAL @OFICIAL_SPEEDNET\033[m \033[0;36m#\033[m"
 echo -e "\033[0;36m#===================================================#\033[m"
-PS3='O que deseja fazer?: ' 
-echo ""
-options=("Instalar SlowDNS SSH" "Instalar SlowDNS SSL" "Instalar SlowDNS DROP" "Ver Credenciais" "Reiniciar SlowDNS" "Parar SlowDNS" "Atualizar SlowDNS" "Remover SlowDNS" "Remover Script" "Sair")
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Instalar SlowDNS SSH")
-            rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssh/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
-            sleep 10
-            clear
-            slowdns
-            ;;
-        "Instalar SlowDNS SSL")
-            rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/ssl/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
-            sleep 10
-            clear
-            slowdns
-            ;;
-         "Instalar SlowDNS DROP")
-            rm slowdns-install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/drop/slowdns-install; chmod +x slowdns-install; ./slowdns-install; rm slowdns-install
-            sleep 10
-            clear
-            slowdns
-            ;;
-        "Ver Credenciais")
-            slowdns-info
-            sleep 10
-            clear
-            slowdns
-            ;;
-        "Reiniciar SlowDNS")
-            restartdns
-            break
-            ;;
-        "Parar SlowDNS")
-            desabledns
-            break
-            ;;
-        "Atualizar SlowDNS")
-            rm remove; apt update; apt upgrade -y; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/update; chmod +x update; ./update; rm update
-            break
-            ;;
-        "Remover SlowDNS")
-            wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
-            clear
-            sleep 2
-            ;;
-        "Remover Script")
-            wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow; rm /bin/slowdns
-            break
-            ;;
-        "Sair")
-            break
-            break
-            ;;
-        *) echo -e "Opção inválida! $REPLY"
-            ;;
+    echo ""
+    echo -e "\033[0;36m[01]\033[m | Instalar SlowDNS SSH"
+    echo -e "\033[0;36m[02]\033[m | Instalar SlowDNS SSL"
+    echo -e "\033[0;36m[03]\033[m | Instalar SlowDNS DROP"
+    echo -e "\033[0;36m[04]\033[m | Ver informações"
+    echo -e "\033[0;36m[05]\033[m | Iniciar SlowDNS"
+    echo -e "\033[0;36m[06]\033[m | Reiniciar SlowDNS"
+    echo -e "\033[0;36m[07]\033[m | Parar SlowDNS"
+    echo -e "\033[0;36m[08]\033[m | Remover SlowDNS"
+    echo -e "\033[0;36m[09]\033[m | Atualizar/Reinstalar"
+    echo -e "\033[0;36m[10]\033[m | Remover Script"
+    echo -e "\033[0;36m[00]\033[m | SAIR"
+    echo ""
+    echo -ne "\033[0;36mO que deseja fazer?:\0033[m " && read opcao
+    case $opcao in
+    1) Opcao1 ;;
+    2) Opcao2 ;;
+    3) Opcao3 ;;
+    4) Opcao4 ;;
+    5) Opcao5 ;;
+    6) Opcao6 ;;
+    7) Opcao7 ;;
+    8) Opcao8 ;;
+    9) Opcao9 ;;
+    10) Opcao10 ;;
+    0) Sair ;;
+    *) "Opção inválida" ; echo ; slowdns;;
     esac
-done
+    }
+
+Opcao1 () {
+    clear
+    bash /etc/slowdns/slowdns-ssh
+    slowdns
+}
+
+Opcao2 () {
+    clear
+    bash /etc/slowdns/slowdns-ssl
+    slowdns
+}
+
+Opcao3 () {
+    clear
+    bash /etc/slowdns/slowdns-drop
+    slowdns
+}
+
+Opcao4 () {
+    clear
+    bash /etc/slowdns/slowdns-info
+    slowdns
+}
+
+Opcao5 () {
+    clear
+    bash /etc/slowdns/startdns
+    slowdns
+}
+
+Opcao6 () {
+    clear
+    bash /etc/slowdns/restartdns
+    slowdns
+}
+
+Opcao7 () {
+    clear
+    bash /etc/slowdns/stopdns
+    slowdns
+}
+
+Opcao8 () {
+     clear
+    bash /etc/slowdns/stopdns
+    bash /etc/slowdns/remove-slow
+    slowdns
+}
+
+Opcao9 () {
+     clear
+    bash /etc/slowdns/update
+    slowdns
+}
+
+Opcao10 () {
+     clear
+    bash /etc/slowdns/remove-slow
+    echo -e "\033[0;31mSlowDNS Manager Desinstalado!\033[0m"
+    sleep 2
+    rm /bin/slowdns
+}
+
+Sair() {
+    clear
+    exit
+}
+clear
+slowdns
