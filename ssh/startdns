@@ -28,7 +28,7 @@ tput cnorm
 }
 echo "INICIANDO SLOWDNS"
 fun_start () {
-nameserver='teste.teste.com'
+nameserver='1234'
 cd /etc/slowdns
 screen -dmS slowdns /etc/slowdns/dns-server -udp :5300 -privkey-file /root/server.key $nameserver 127.0.0.1:22
 sleep 1
