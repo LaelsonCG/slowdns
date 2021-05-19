@@ -42,6 +42,9 @@ rm -rf /bin/slowdns && rm /root/remove-slow
 sleep 2
 }
 fun_bar 'fun_remove'
-rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install; chmod +x install; ./install
+rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install && chmod +x install && bash install
+sleep 5
 echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]\033[0m"
+echo ""
+read -p "Tecle [ ENTER ] para finalizar esta tarefa"
 rm update
