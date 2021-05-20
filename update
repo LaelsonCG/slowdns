@@ -49,11 +49,13 @@ fun_update () {
 rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install && chmod +x install && bash install
 }
 fun_bar 'fun_update'
-sleep 5
+sleep 3
+rm install
 echo ""
 echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]\033[0m"
 echo ""
-echo -e \033[0;36mPara abrir o menu, use:\033[0m slowdns"
+sleep 3
+echo -e "\033[0;36mPara abrir o menu, use:\033[0m slowdns"
 echo ""
 read -p "Dê [ ENTER ] para liberar o terminal"
-rm install; rm update
+rm update
