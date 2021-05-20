@@ -45,6 +45,7 @@ rm remove-slow && rm -rf /etc/slowdns
 }
 fun_bar 'fun_remove'
 rm -rf /etc/slowdns
+rm remove-slow
 echo ""
 echo -e "   \033[0;36mATUALIZANDO SCRIPT...\033[0m"
 echo ""
