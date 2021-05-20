@@ -37,13 +37,14 @@ echo ""
 echo -e "   \033[0;36mREMOVENDO ARQUIVOS ANTIGOS...\033[0m"
 echo ""
 fun_remove () {
-rm -rf remove-slow; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow; chmod +x remove-slow; ./remove-slow
-rm -rf /bin/slowdns && rm /root/remove-slow
+rm -rf remove-slow; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/remove-slow && chmod +x remove-slow && bash remove-slow
+rm -rf /bin/slowdns /etc/slowdns/ && rm /root/remove-slow
 sleep 2
+rm remove-slow && rm -rf /etc/slowdns
 }
 fun_bar 'fun_remove'
 echo ""
-echo -e "   \033[0;36mATUALIZANDO...\033[0m    "
+echo -e "   \033[0;36mATUALIZANDO SCRIPT...\033[0m"
 echo ""
 fun_update () {
 rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install && chmod +x install && bash install
@@ -55,7 +56,8 @@ echo ""
 echo -e "\033[0;36mSLOWDNS ATUALIZADO COM SUCESSO! [✔]\033[0m"
 echo ""
 sleep 3
-echo -e "\033[0;36mPara abrir o menu, use:\033[0m slowdns"
+echo -e "  \033[1;33mPARA ABRIR O MENU USE:\033[1;37m\033 slowdns[1;33m "
+echo -e "  \033[1;33mVerificação \033[1;37m- \033[1;33m["
 echo ""
 read -p "Dê [ ENTER ] para liberar o terminal"
 rm update
