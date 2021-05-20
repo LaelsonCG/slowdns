@@ -43,7 +43,7 @@ sleep 2
 }
 fun_bar 'fun_remove'
 echo ""
-echo "\033[0;36m   ATUALIZANDO...\033[0m"
+echo -e "   \033[0;36mATUALIZANDO...\033[0m    "
 echo ""
 fun_update () {
 rm -rf install; wget https://raw.githubusercontent.com/LaelsonCG/slowdns/main/install && chmod +x install && bash install
