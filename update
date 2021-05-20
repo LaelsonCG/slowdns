@@ -61,4 +61,3 @@ echo -e "  \033[1;33mPARA ABRIR O MENU USE: \033[1;37m\033sslowdns\033[1;33m"
 echo ""
 read -p "Dê [ ENTER ] para liberar o terminal"
 echo -e "\033[0m"
-rm update
